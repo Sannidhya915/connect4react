@@ -1,0 +1,116 @@
+:root {
+    --bg-color: cornflowerblue;
+    --board-bg-color: bisque;
+    --board-border-color: burlywood;
+    --panel-bg-color: lightgoldenrodyellow;
+    --panel-border-color: burlywood;
+    --no-p: white;
+    --p1: blue;
+    --p2: red;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.panel {
+    background-color: var(--panel-bg-color);
+    border: 8px solid var(--panel-border-color);
+    box-shadow: 7px 5px 15px 3px black;
+    z-index: 1;
+    width: 100%;
+    max-width: 520px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.header-text {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.footer button {
+    margin: 5px;
+    width: 140px;
+    height: 50px;
+    background-color: var(--panel-bg-color);
+    font-size: 20px;
+    box-shadow: 7px 5px 15px 3px black;
+    border: 5px solid chocolate;
+    font-weight: bold;
+}
+
+.footer button:hover {
+    background-color: chocolate;
+}
+
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding: 40px;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
+    background-color: var(--board-bg-color);
+    border: 8px solid var(--board-border-color);
+    border-radius: 8%;
+    box-shadow: 7px 5px 15px 3px black;
+}
+
+.gameCircle {
+    width: 80%;
+    margin: 5px;
+    /* padding-bottom: 80%; Maintain a square aspect ratio for game circles */
+    border-radius: 50%;
+    border: 5px solid black;
+}
+
+.player_0 {
+    background-color: var(--no-p);
+}
+
+.player_1 {
+    background-color: var(--p1);
+}
+
+.player_2 {
+    background-color: var(--p2);
+}
+
+@media (max-width: 768px) {
+    .gameBoard {
+        max-width: 100%;
+        aspect-ratio: 1 / 1; /* Maintain a square aspect ratio */
+    }
+}
